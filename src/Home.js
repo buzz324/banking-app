@@ -3,21 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Home() {
   const [users, setUsers] = useState([])
-  // const [accounts, setAccounts] = useState([])
   const navigate = useNavigate();
-
-  // const fetchAccounts = (userId) => {
-  //   fetch(`http://localhost:8080/api/accounts?userId=${userId}`)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       if (Array.isArray(data)) {
-  //         setAccounts(data)
-  //       } else {
-  //         console.error('Fetched data is not an array:', data)
-  //       }
-  //     })
-  //     .catch(error => console.error('Error fetching accounts:', error))
-  // }
 
   useEffect(() => {
     fetch('http://localhost:8080/api/users', {

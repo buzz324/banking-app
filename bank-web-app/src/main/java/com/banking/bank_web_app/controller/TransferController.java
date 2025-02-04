@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.banking.bank_web_app.model.Account;
+import com.banking.bank_web_app.model.Transaction;
 import com.banking.bank_web_app.repository.AccountRepository;
+import com.banking.bank_web_app.repository.TransactionRepository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RestController
@@ -17,6 +20,9 @@ public class TransferController {
 
     @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @PostMapping("/transfer")
     public String transfer(@RequestBody TransferRequest transferRequest) {
@@ -34,6 +40,14 @@ public class TransferController {
 
                 accountRepository.save(fromAccount);
                 accountRepository.save(toAccount);
+
+                // Record the transaction
+                // Transaction transaction = new Transaction();
+                // transaction.setId(transactionRepository.findMaxId() + 1);
+                // transaction.setFromAccountId(fromAccount.getId());
+                // transaction.setToAccountId(toAccount.getId());
+                // transaction.setAmount(amount);
+                // transactionRepository.save(transaction);
 
                 return "Transfer successful";
             } else {

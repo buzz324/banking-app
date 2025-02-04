@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN javac com/banking/bank_web_app/PostgresConnection.java
+RUN javac banking-app/com/banking/bank_web_app/PostgresConnection.java
 
-CMD ["java", "com.banking.bank_web_app.PostgresConnection"]
+CMD ["java", "banking-app.src.main.com.banking.bank_web_app.PostgresConnection"]

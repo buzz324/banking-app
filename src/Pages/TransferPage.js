@@ -40,7 +40,7 @@ function TransferPage() {
       .then(response => response.text())
       .then(data => {
         console.log(data);
-        navigate(`/accounts/${userId}`);
+        // navigate(`/accounts/${userId}`);
       })
       .catch(error => console.error('Error performing transfer:', error));
   };
