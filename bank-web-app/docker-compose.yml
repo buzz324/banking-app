@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: transaction-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  java-app:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/transaction-db
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+    command: ["java", "com.banking.bank_web_app.PostgresConnection"]
+
+volumes:
+  postgres_data:

@@ -1,0 +1,30 @@
+[{
+    "id": "1",
+    "name": "First",
+    "pagesName": [{
+      "name": "Login",
+      "message": "Login Notification Message",
+      "messageType": "Warning"
+    },
+    {
+      "name": "Edit",
+      "message":"Edit Notification Message",
+      "messageType": "Info"
+    }]
+  },
+  {
+   "id": "2",
+    "name": "Second",
+    "pagesName": [{
+      "name": "Admin",
+      "message": "Admin Notification Message",
+      "messageType": "Info"
+    },
+    {
+     "name": "Edit",
+     "message": "Edit Notification Message",
+     "messageType": "Warning"
+  }
+  ]}
+  ]
+  
